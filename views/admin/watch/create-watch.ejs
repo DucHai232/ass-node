@@ -1,0 +1,14 @@
+<form action="/create-watch" method="post">
+  <input type="text" name="watchName" class="input-data" /> <br />
+  <br />
+  <input type="number" name="price" class="input-data" /> <br />
+  <br />
+  <textarea name="watchDescription" id=""></textarea> <br />
+  <br />
+  <select name="brand" id="">
+    <% brands.forEach(brand => { %>
+    <option value="<%= brand._id%>"><%= brand.brandName %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Tạo</button>
+</form>

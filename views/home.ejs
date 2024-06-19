@@ -1,0 +1,27 @@
+<div class="home-container">
+  <h1>Home nè</h1>
+  <ul>
+    <% watches.forEach(watch => { %>
+    <li>
+      <div>
+        <h1><%= watch.watchName %></h1>
+        <p><strong>Giá đồng hồ: </strong> <%= watch.price %></p>
+        <p><strong>Miêu tả: </strong> <%= watch.watchDescription %></p>
+        <div>
+          <h4>danh sach comment</h4>
+          <ul>
+            <% watch.comments.forEach(cmt => { %>
+            <li><%= cmt.content %></li>
+
+            <% }) %>
+          </ul>
+        </div>
+        <form action="/create-comment/<%= watch._id %>" method="post">
+          <input name="content" type="text" placeholder="comment" />
+          <button type="submit">Cmt</button>
+        </form>
+      </div>
+    </li>
+    <% }) %>
+  </ul>
+</div>
